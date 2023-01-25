@@ -16,8 +16,7 @@ public class UserRepository {
     public List<Authorities> getUserAuthorities(String user, String password) {
         String keyForAdmission = user + password;
         if (permissionStore.containsKey(keyForAdmission)) {
-            List<Authorities> list = permissionStore.get(keyForAdmission);
-            return list;
+            return permissionStore.get(keyForAdmission);
         } else {
             return new ArrayList<>();
         }
