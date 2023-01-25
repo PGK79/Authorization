@@ -6,6 +6,7 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import ru.netology.authorizationservice.model.User;
+
 public final class UserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {
     @Override
     public boolean supportsParameter(MethodParameter methodParameter) {
@@ -16,22 +17,10 @@ public final class UserHandlerMethodArgumentResolver implements HandlerMethodArg
                                   ModelAndViewContainer modelAndViewContainer,
                                   NativeWebRequest nativeWebRequest,
                                   WebDataBinderFactory webDataBinderFactory) throws Exception {
+
         String user = nativeWebRequest.getParameter("user");
         String password = nativeWebRequest.getParameter("password");
 
-        if (isNotSet(user)) {
-            user = "VasyaPupkin";
-        }
-
-        if (isNotSet(password)) {
-            password = "netology";
-        }
-
         return new User(user, password);
-    }
-
-    //Хоть и валидируются, но на перспективу
-    private boolean isNotSet(String value) {
-        return value == null;
     }
 }
