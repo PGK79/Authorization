@@ -1,7 +1,7 @@
 package ru.netology.authorizationservice.controllers;
 
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.netology.authorizationservice.enums.Authorities;
 import ru.netology.authorizationservice.model.User;
@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@Validated
 public class AuthorizationController {
     AuthorizationService service;
 
