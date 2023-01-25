@@ -41,6 +41,5 @@ public class AllExceptionHandlers {
             return new ResponseEntity<>(e.getMessage().replace(authoritiesUser,
                     "Ошибка в имени пользователя "), HttpStatus.BAD_REQUEST);
         }
-
     }
 }
