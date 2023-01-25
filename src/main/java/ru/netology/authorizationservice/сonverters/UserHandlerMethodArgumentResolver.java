@@ -16,7 +16,7 @@ public final class UserHandlerMethodArgumentResolver implements HandlerMethodArg
     public Object resolveArgument(MethodParameter methodParameter,
                                   ModelAndViewContainer modelAndViewContainer,
                                   NativeWebRequest nativeWebRequest,
-                                  WebDataBinderFactory webDataBinderFactory) throws Exception {
+                                  WebDataBinderFactory webDataBinderFactory) {
 
         String user = nativeWebRequest.getParameter("user");
         String password = nativeWebRequest.getParameter("password");
