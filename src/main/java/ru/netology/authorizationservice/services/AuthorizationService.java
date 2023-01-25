@@ -25,7 +25,6 @@ public class AuthorizationService {
             throw new UnauthorizedUser("Unknown user " + user);
         }
         return userAuthorities;
-
     }
 
     private boolean isEmpty(String str) {
