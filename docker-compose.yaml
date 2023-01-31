@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  authorize1:
+    image: 'authorize:1.0'
+    ports:
+      - "12345:8080"
